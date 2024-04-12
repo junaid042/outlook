@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
+  <Id>da1e807b-e9ec-4e77-b53c-bc7632c6740b</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="mobile-addin"/>
+  <Description DefaultValue="A template to get started."/>
+  <IconUrl DefaultValue="https://www.contoso.com/assets/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://www.contoso.com/assets/icon-128.png"/>
+  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <AppDomains>
+    <AppDomain>https://www.contoso.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://www.contoso.com/taskpane.html"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  </Rule>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <Description resid="residDescription"></Description>
+    <Requirements>
+      <bt:Sets>
+        <bt:Set Name="Mailbox" MinVersion="1.3"/>
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="residFunctionFile"/>
+          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="apptComposeGroup">
+                <Label resid="residDescription"/>
+                <Control xsi:type="Button" id="insertMeetingButton">
+                  <Label resid="residLabel"/>
+                  <Supertip>
+                    <Title resid="residLabel"/>
+                    <Description resid="residTooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon-16"/>
+                    <bt:Image size="32" resid="icon-32"/>
+                    <bt:Image size="64" resid="icon-64"/>
+                    <bt:Image size="80" resid="icon-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>insertContosoMeeting</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+
+        <MobileFormFactor>
+          <FunctionFile resid="residFunctionFile"/>
+          <ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
+            <Control xsi:type="MobileButton" id="insertMeetingButton">
+              <Label resid="residLabel"/>
+              <Icon>
+                <bt:Image size="25" scale="1" resid="icon-16"/>
+                <bt:Image size="25" scale="2" resid="icon-16"/>
+                <bt:Image size="25" scale="3" resid="icon-16"/>
+
+                <bt:Image size="32" scale="1" resid="icon-32"/>
+                <bt:Image size="32" scale="2" resid="icon-32"/>
+                <bt:Image size="32" scale="3" resid="icon-32"/>
+
+                <bt:Image size="48" scale="1" resid="icon-48"/>
+                <bt:Image size="48" scale="2" resid="icon-48"/>
+                <bt:Image size="48" scale="3" resid="icon-48"/>
+              </Icon>
+              <Action xsi:type="ExecuteFunction">
+                <FunctionName>insertContosoMeeting</FunctionName>
+              </Action>
+            </Control>
+          </ExtensionPoint>
+        </MobileFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
+        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
+        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
+        <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</VersionOverrides>
+</OfficeApp>
