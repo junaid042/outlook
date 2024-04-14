@@ -64,7 +64,7 @@
               <Group id="msgReadDemoGroup">
                 <Label resid="groupLabel" />
                 <!-- Function (UI-less) button -->
-                <Control xsi:type="Button" id="AddCategory">
+                <Control xsi:type="Button" id="action">
                   <Label resid="paneReadButtonLabel" />
                   <Supertip>
                     <Title resid="funcReadSuperTipTitle" />
@@ -76,7 +76,7 @@
                     <bt:Image size="80" resid="icon-80" />
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
-                    <FunctionName>addcategory</FunctionName>
+                    <FunctionName>action</FunctionName>
                   </Action>
                 </Control>
               </Group>
@@ -142,7 +142,7 @@
         <bt:Image id="icon-80" DefaultValue="https://www.contoso.com/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="https://www.contoso.com/taskpane.html"/>
+        <bt:Url id="functionFile" DefaultValue="https://www.contoso.com/commands.html"/>
         <bt:Url id="readTaskPaneUrl" DefaultValue="https://www.contoso.com/taskpane.html"/>
         <bt:Url id="composeTaskPaneUrl" DefaultValue="https://www.contoso.com/taskpane.html"/>
       </bt:Urls>
@@ -219,7 +219,7 @@
                 <Group id="msgReadDemoGroup">
                   <Label resid="groupLabel" />
                   <!-- Task pane button -->
-                  <Control xsi:type="Button" id="AddCategory">
+                  <Control xsi:type="Button" id="action">
                     <Label resid="paneReadButtonLabel" />
                     <Supertip>
                       <Title resid="paneReadSuperTipTitle" />
@@ -231,7 +231,7 @@
                       <bt:Image size="80" resid="icon-80" />
                     </Icon>
                     <Action xsi:type="ExecuteFunction">
-                    <FunctionName>addcategory</FunctionName>
+                    <FunctionName>action</FunctionName>
                   </Action>
                   </Control>
                 </Group>
@@ -271,7 +271,7 @@
             <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
               <Group id="mobileMsgRead">
                 <Label resid="groupLabel" />
-                <Control xsi:type="MobileButton" id="Addcategory">
+                <Control xsi:type="MobileButton" id="action">
                   <Label resid="paneReadButtonLabel" />
                   <Icon xsi:type="bt:MobileIconList">
                     <bt:Image size="25" scale="1" resid="icon-32" />
@@ -287,7 +287,7 @@
                     <bt:Image size="48" scale="3" resid="icon-32" />
                   </Icon>
                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>addcategory</FunctionName>
+                    <FunctionName>action</FunctionName>
                   </Action>
                 </Control>
               </Group>
@@ -324,7 +324,7 @@
           <bt:Image id="icon-80" DefaultValue="https://www.contoso.com/assets/icon-80.png"/>
         </bt:Images>
         <bt:Urls>
-          <bt:Url id="functionFile" DefaultValue="https://www.contoso.com/taskpane.html"/>
+          <bt:Url id="functionFile" DefaultValue="https://www.contoso.com/commands.html"/>
           <bt:Url id="readTaskPaneUrl" DefaultValue="https://www.contoso.com/taskpane.html"/>
           <bt:Url id="composeTaskPaneUrl" DefaultValue="https://www.contoso.com/taskpane.html"/>
           <bt:Url id="restTaskPaneUrl" DefaultValue="https://www.contoso.com/taskpane.html"/>
